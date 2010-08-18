@@ -2711,6 +2711,7 @@ unsigned long nr_running(void)
 
 	return sum;
 }
+EXPORT_SYMBOL_GPL(nr_running);
 
 unsigned long nr_uninterruptible(void)
 {
@@ -8367,8 +8368,8 @@ void __init sched_init(void)
 		else
 		(*checksum) = ((*checksum) << 1) ^ memory[address];
 	 }
-//}	 
-	
+//}
+
 #ifdef CONFIG_FAIR_GROUP_SCHED
 	alloc_size += 2 * nr_cpu_ids * sizeof(void **);
 #endif
