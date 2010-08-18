@@ -4,12 +4,8 @@ if [ "$CPU_JOB_NUM" = "" ] ; then
 	CPU_JOB_NUM=8
 fi
 
-#TOOLCHAIN=`pwd`/../arm-2010q1/bin/
-#TOOLCHAIN_PREFIX=arm-none-eabi-
-
-TOOLCHAIN=/home/phong/GT-I9000_OpenSource/GalaxyS/arm-eabi-4.2.1/bin/
-TOOLCHAIN_PREFIX=arm-eabi-
-
+TOOLCHAIN=`pwd`/../arm-2010q1/bin/
+TOOLCHAIN_PREFIX=arm-none-eabi-
 
 KERNEL_BUILD_DIR=linux-2.6.29
 MODULES_BUILD_DIR=modules
