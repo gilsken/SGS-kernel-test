@@ -17,7 +17,7 @@ export PROJECT_NAME
 export HW_BOARD_REV
 export LD_LIBRARY_PATH=.:${TOOLCHAIN}/../lib
 echo "************************************************************"
-echo "* EXPORT VARIABLE		                            	 *"
+echo "* EXPORT VARIABLE		                            	     *"
 echo "************************************************************"
 echo "PRJROOT=$PRJROOT"
 echo "PROJECT_NAME=$PROJECT_NAME"
@@ -27,7 +27,7 @@ echo "************************************************************"
 BUILD_CONFIG()
 {
 	echo "************************************************************"
-	echo "* BUILD_CONFIG                              	 *"
+	echo "* BUILD_CONFIG                              	             *"
 	echo "************************************************************"
 	echo
 	pushd $KERNEL_BUILD_DIR
@@ -90,7 +90,7 @@ BUILD_MENUCONFIG()
 PRINT_USAGE()
 {
 	echo "************************************************************"
-	echo "* build_kernel [config|kernel|module|menuconfig|clean]    *"
+	echo "* build_kernel [config|kernel|module|menuconfig|clean]     *"
 	echo "************************************************************"
 	echo
 }
