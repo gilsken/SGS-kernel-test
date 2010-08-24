@@ -4,8 +4,12 @@ if [ "$CPU_JOB_NUM" = "" ] ; then
 	CPU_JOB_NUM=8
 fi
 
-TOOLCHAIN=`pwd`/../arm-2010q1/bin/
-TOOLCHAIN_PREFIX=arm-none-eabi-
+#TOOLCHAIN=`pwd`/../arm-2010q1/bin/
+#TOOLCHAIN_PREFIX=arm-none-eabi-
+#TOOLCHAIN=/home/gilsken/opt/ctng/bin/
+#TOOLCHAIN_PREFIX=arm-i9000-linux-uclibcgnueabi-
+TOOLCHAIN=/home/gilsken/x-tools/arm-cortex_a8-linux-uclibcgnueabi/bin/
+TOOLCHAIN_PREFIX=arm-cortex_a8-linux-uclibcgnueabi-
 
 KERNEL_BUILD_DIR=linux-2.6.29
 MODULES_BUILD_DIR=modules
@@ -54,7 +58,7 @@ BUILD_MODULE()
 	export KDIR=`pwd`
 	popd
 	pushd $MODULES_BUILD_DIR
-	make $1 $2 ARCH=arm CROSS_COMPILE=$TOOLCHAIN/$TOOLCHAIN_PREFIX
+	make $1 $2 ARCH=arm HOSTCFLAGS="-O2" CROSS_COMPILE=$TOOLCHAIN/$TOOLCHAIN_PREFIX
 	popd
 }
 
@@ -66,7 +70,7 @@ BUILD_KERNEL()
 	echo
 
 	pushd $KERNEL_BUILD_DIR
-	make HOSTCFLAGS="-g -O2" ARCH=arm CROSS_COMPILE=$TOOLCHAIN/$TOOLCHAIN_PREFIX $2 $3
+	make HOSTCFLAGS="-O2" ARCH=arm CROSS_COMPILE=$TOOLCHAIN/$TOOLCHAIN_PREFIX $2 $3
 	#make -j$CPU_JOB_NUM HOSTCFLAGS="-g -O2" ARCH=arm CROSS_COMPILE=$TOOLCHAIN/$TOOLCHAIN_PREFIX
 	popd
 }
