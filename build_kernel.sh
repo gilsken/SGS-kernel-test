@@ -4,10 +4,6 @@ if [ "$CPU_JOB_NUM" = "" ] ; then
 	CPU_JOB_NUM=8
 fi
 
-#TOOLCHAIN=`pwd`/../arm-2010q1/bin/
-#TOOLCHAIN_PREFIX=arm-none-eabi-
-#TOOLCHAIN=/home/gilsken/opt/ctng/bin/
-#TOOLCHAIN_PREFIX=arm-i9000-linux-uclibcgnueabi-
 TOOLCHAIN=/home/gilsken/x-tools/arm-cortex_a8-linux-uclibcgnueabi/bin/
 TOOLCHAIN_PREFIX=arm-cortex_a8-linux-uclibcgnueabi-
 
