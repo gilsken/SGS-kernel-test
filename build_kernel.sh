@@ -4,20 +4,13 @@ if [ "$CPU_JOB_NUM" = "" ] ; then
 	CPU_JOB_NUM=8
 fi
 
-TOOLCHAIN=/home/gilsken/x-tools/arm-cortex_a8-linux-uclibcgnueabi/bin/
+TOOLCHAIN=`pwd`/arm-cortex_a8-linux-uclibcgnueabi/bin
 TOOLCHAIN_PREFIX=arm-cortex_a8-linux-uclibcgnueabi-
 
 KERNEL_BUILD_DIR=linux-2.6.29
 MODULES_BUILD_DIR=modules
 PROJECT_NAME=aries
 HW_BOARD_REV="03"
-
-#TODO
-#add to arch/arm/config/aries_rev03_defconfig
-#CONFIG_BLK_DEV_INITRD=y
-#CONFIG_INITRAMFS_SOURCE="../directory_initramfs"
-#CONFIG_INITRAMFS_ROOT_UID=0
-#CONFIG_INITRAMFS_ROOT_GID=0
 
 export PRJROOT=$PWD
 export PROJECT_NAME
